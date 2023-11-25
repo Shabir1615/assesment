@@ -11,7 +11,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Assesment2Component } from './assesment2/assesment2.component';
 import { AssesmentChatComponent } from './assesment-chat/assesment-chat.component';
 import { FormsModule } from '@angular/forms';
 
@@ -23,7 +22,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     LoginComponentComponent,
     SignupComponentComponent,
-    Assesment2Component,
     AssesmentChatComponent,
     UserListingComponent,
     NavbarComponent,
