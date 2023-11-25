@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+    input {
+      width: 100%;
+    }
+  }
+  .container-sm{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }

@@ -1,0 +1,82 @@
+<!-- 
+<div class="row">
+    
+    <div class="col-sm-6 border border-5 bg-secondary" style="color:greenyellow">
+        <h3>Person 1</h3>
+      <div style="height: 95vh;">
+        <div *ngFor="let message of messages">
+          <div *ngIf="message.sender !== 'Person A'">{{ message.sender }}: {{ message.content }}</div>
+          <div *ngIf="message.sender === 'Person A'" style="text-align: right;">You: {{ message.content }}</div>
+        </div>
+      </div>
+      <div style="height: 5vh">
+        <input placeholder="type" [(ngModel)]="personASenderText" (keyup.enter)="sendMessage('Person A')">
+      </div>
+    </div>
+    <div class="col-sm-6 border border-5 bg-info">
+        <h3>Person 2</h3>
+      <div style="height: 95vh;">
+        <div *ngFor="let message of messages">
+          <div *ngIf="message.sender !== 'Person B'">{{ message.sender }}: {{ message.content }}</div>
+          <div *ngIf="message.sender === 'Person B'" style="text-align: right;">You: {{ message.content }}</div>
+        </div>
+      </div>
+      <div style="height: 5vh">
+        <input placeholder="type" [(ngModel)]="personBSenderText" (keyup.enter)="sendMessage('Person B')">
+      </div>
+    </div>
+  </div>
+   -->
+<div>
+  <app-navbar></app-navbar>
+</div>
+<div class="container">
+  <div class="row justify-content-center form-row-height">
+    <div class="col-12 col-md-6">
+      <div class="bg-warning-subtle p-2 h-100 d-flex flex-column justify-content-between">
+        <div class="container overflow-y-auto chat-window-height
+overflow-y-auto chat-window-height">
+          <div class="row justify-content-between gy-3 ">
+            <div class="col-12" *ngFor="let message of messages">
+              <div class="p-2 bg-white max-w-50 rounded-3 position-relative"
+                [ngClass]="message.sender === 'Person B' ? 'chat-from':'chat-to ms-auto'">
+                <p class="mb-0 font-10px text-dark" [innerText]="message.sender === 'Person B' ? message.sender :'You'">
+                </p>
+                <p class="mb-0 font-14px text-secondary">{{message.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="Person A"
+            [(ngModel)]="personASenderText" (keyup.enter)="sendMessage('Person A')">
+          <label for="floatingInput">Person A</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="bg-danger-subtle p-2 h-100 d-flex flex-column justify-content-between">
+        <div class="container overflow-y-auto chat-window-height
+overflow-y-auto chat-window-height">
+
+
+          <div class="row justify-content-between gy-3 ">
+            <div class="col-12" *ngFor="let message of messages">
+              <div class="p-2 bg-white max-w-50 rounded-3 position-relative"
+                [ngClass]="message.sender === 'Person A' ? 'chat-from':'chat-to ms-auto'">
+                <p class="mb-0 font-10px text-dark" [innerText]="message.sender === 'Person A' ? message.sender :'You'">
+                </p>
+                <p class="mb-0 font-14px text-secondary">{{message.content}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="Person B"
+            [(ngModel)]="personBSenderText" (keyup.enter)="sendMessage('Person B')">
+          <label for="floatingInput">Person B</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
